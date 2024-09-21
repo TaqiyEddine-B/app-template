@@ -8,7 +8,7 @@ setup:
 	@echo "Please run 'source $(BASHRC)' or restart your terminal to apply the changes."
 
 install:
-	$(VENV_DIR)/bin/pip install -r requirements.txt
+	$(VENV_DIR)/bin/pip install --upgrade pip && $(VENV_DIR)/bin/pip install -r requirements.txt
 
 clean:
 	rm -rf $(VENV_DIR)
