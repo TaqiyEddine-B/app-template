@@ -2,10 +2,10 @@ VENV_DIR=~/.venv
 BASHRC=~/.bashrc
 
 setup:
-	virtualenv $(VENV_DIR)
+	python3 -m venv $(VENV_DIR)
+	. $(VENV_DIR)/bin/activate
 	@echo "source $(VENV_DIR)/bin/activate" >> $(BASHRC)
-	@echo "Virtual environment setup complete and bashrc updated."
-	@echo "Please run 'source $(BASHRC)' or restart your terminal to apply the changes."
+	@echo "Virtual environment setup complete and bashrc updated. Please restart your terminal."
 
 install:
 	$(VENV_DIR)/bin/pip install --upgrade pip && $(VENV_DIR)/bin/pip install -r requirements.txt
