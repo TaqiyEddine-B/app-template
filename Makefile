@@ -13,3 +13,6 @@ install:
 clean:
 	rm -rf $(VENV_DIR)
 	@echo "Virtual environment removed"
+
+run:
+	streamlit run main.py
