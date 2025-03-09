@@ -1,14 +1,11 @@
-VENV_DIR=~/.venv
-BASHRC=~/.bashrc
 
 setup:
-	python3 -m venv $(VENV_DIR)
-	. $(VENV_DIR)/bin/activate
-	@echo "source $(VENV_DIR)/bin/activate" >> $(BASHRC)
-	@echo "Virtual environment setup complete and bashrc updated. Please restart your terminal."
+	uv venv $(UV_PROJECT_ENVIRONMENT)
+	@echo "source $(UV_PROJECT_ENVIRONMENT)/bin/activate" >> ~/.bashrc
 
 install:
-	$(VENV_DIR)/bin/pip install --upgrade pip && $(VENV_DIR)/bin/pip install -r requirements.txt
+	uv lock
+	uv sync --frozen
 
 clean:
 	rm -rf $(VENV_DIR)

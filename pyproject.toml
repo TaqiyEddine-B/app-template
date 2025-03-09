@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "app-template"
+version = "0.1.0"
+dependencies = [
+    "ipykernel==6.29.5",
+    "streamlit==1.43.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.5",
+]
